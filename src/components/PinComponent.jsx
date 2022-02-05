@@ -28,10 +28,10 @@ const PinComponent = ({ pin }) => {
         .insert('after', 'save[-1]', [
           {
             _key: uuidv4(),
-            userId: user.googleId,
+            userId: user?.googleId,
             postedBy: {
               _type: 'postedBy',
-              _ref: user.googleId,
+              _ref: user?.googleId,
             },
           },
         ])
@@ -111,7 +111,7 @@ const PinComponent = ({ pin }) => {
                     : pin.destination.slice(8)}
                 </a>
               )}
-              {pin.postedBy?._id === user.googleId && (
+              {pin.postedBy?._id === user?.googleId && (
                 <button
                   type="button"
                   className="bg-white p-2 opacity-70 hover:opacity-100 font-bold text-base rounded-3xl outline-none hover:shadow-md"
