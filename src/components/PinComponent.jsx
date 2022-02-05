@@ -16,7 +16,7 @@ const PinComponent = ({ pin }) => {
 
   const user = fetchUser();
   const alreadySaved = !!pin?.save?.filter(
-    (item) => item.postedBy._id === user.googleId
+    (item) => item?.postedBy?._id === user?.googleId
   )?.length;
 
   const savePin = (id) => {
