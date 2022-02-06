@@ -107,7 +107,7 @@ const PinComponent = ({ pin }) => {
                 >
                   <BsFillArrowUpRightCircleFill />
                   {pin.destination.length > 16
-                    ? pin.destination.slice(8, 20)
+                    ? `${pin.destination.slice(8, 15)}...`
                     : pin.destination.slice(8)}
                 </a>
               )}
