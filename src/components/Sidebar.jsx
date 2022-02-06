@@ -1,23 +1,14 @@
 /** @format */
 
 import { RiHomeFill } from 'react-icons/ri';
-import {} from 'react-icons/io';
-
 import Logo from '../assets/logo.png';
 import { Link, NavLink } from 'react-router-dom';
+import { categories } from '../utils/data';
 
 const isActiveStyle =
   'flex items-center px-5 gap-3 font-extrabold border-r-2 border-black transition-all duration-200 ease-in-out capitalize';
 const isInactiveStyle =
   'flex items-center px-5 gap-3 text-gray-500 hover:text-black transition-all duration-200 ease-in-out capitalize';
-
-const categories = [
-  { name: 'Animal' },
-  { name: 'Wallpapers' },
-  { name: 'Photography' },
-  { name: 'Gaming' },
-  { name: 'Coding' },
-];
 
 const Sidebar = ({ user, closeToggle }) => {
   const handleCloseSidebar = () => {
@@ -57,6 +48,11 @@ const Sidebar = ({ user, closeToggle }) => {
               }
               onClick={handleCloseSidebar}
             >
+              <img
+                src={cat.image}
+                className="w-8 h-8 rounded-full shadow-sm"
+                alt="..."
+              />
               {cat.name}
             </NavLink>
           ))}

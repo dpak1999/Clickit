@@ -31,6 +31,13 @@ const Feed = () => {
   if (loading)
     return <Spinner message="Hang tight while we fetch some clicks for you" />;
 
+  if (!pins?.length)
+    return (
+      <div className="flex justify-center items-center">
+        <h2 className="font-bold text-2xl">No posts available</h2>
+      </div>
+    );
+
   return <div>{pins && <MasonryLayout pins={pins} />}</div>;
 };
 
